@@ -1,5 +1,7 @@
 import { Disclosure, Switch } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon} from '@heroicons/react/24/outline'
+import Instagram from "../../../public/instagramLogo.png"
+import Image from "next/image"
 import { BsInstagram } from "react-icons/bs"
 import Link from "next/link"
 
@@ -61,7 +63,7 @@ export default function Navbar() {
                 </div>
               </div>
               <div>
-              <Link className="relative inline-flex items-center mr-2.5 text-white font-bold" href="https://www.instagram.com/mikedropfades/"><BsInstagram className="w-6 h-6 mr-1"/>mikedropfades</Link>
+              <Link className="relative inline-flex items-center mr-2.5 text-white font-bold mt-1" href="https://www.instagram.com/mikedropfades/"><Image src={Instagram} className="w-6 h-6 mr-1 mt-0.5" />mikedropfades</Link>
               </div>
             </div>
           </div>
