@@ -1,28 +1,20 @@
 import { Disclosure, Switch } from '@headlessui/react'
-import { useState } from 'react'
 import { Bars3Icon, XMarkIcon} from '@heroicons/react/24/outline'
 import Link from "next/link"
-// import useColorMode from '../../hooks/useColorMode'
 
 
 const navigation = [
   { name: 'Home', href: '/', current: false },
-  { name: 'Contact', href: '/contact', current: false }
+  { name: 'Book An Appointment', href: '/book', current: false }
 ];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export const testUser = {
-  name: "darren",
-  balance: "1.00000000",
-  userAddress: "xyzAbc123",
-  photo: "https://media.licdn.com/dms/image/D5603AQEkZf1CFGufsg/profile-displayphoto-shrink_400_400/0/1678316144656?e=1686182400&v=beta&t=PLUvlQmzZxfuT6Leu1JZdo8cwupI7nuc3wVZDvJRD4o"
-}
 
 export default function Navbar() {
-  // const [colorMode, setColorMode] = useColorMode();
+
 
 
   return (
@@ -56,7 +48,7 @@ export default function Navbar() {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'dark:text-slate-50 hover:bg-slate-100 dark:hover:bg-gray-900 dark:hover:text-white',
+                          item.current ? 'bg-blue-700 text-white' : 'dark:text-slate-50 hover:bg-blue-700 dark:hover:bg-blue-700 dark:hover:text-white',
                           'rounded-md px-3 py-2 text-sm font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
@@ -68,21 +60,6 @@ export default function Navbar() {
                 </div>
               </div>
               <div className="relative inline-flex items-center mr-2.5">
-                {/* <Switch
-                  checked={colorMode === 'dark'}
-                  onChange={() =>
-                    setColorMode(colorMode === 'dark' ? 'light' : 'dark')
-                  }
-                  className={`${colorMode === 'dark' ? 'bg-violet-500' : 'bg-gray-200'}
-      relative inline-flex flex-shrink-0 h-[24px] w-[40px] border-2 border-transparent rounded-full cursor-pointer transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
-                >
-                  <span className="sr-only">Switch between light and dark mode</span>
-                  <span
-                    aria-hidden="true"
-                    className={`${colorMode === 'dark' ? 'translate-x-[16px]' : 'translate-x-[0]'}
-        inline-block h-[20px] w-[20px] rounded-full bg-white shadow-md transform transition ease-in-out duration-200`}
-                  />
-                </Switch> */}
               </div>
             </div>
           </div>
@@ -95,7 +72,7 @@ export default function Navbar() {
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-900 dark:text-gray-400 hover:bg-gray-800 hover:text-white',
+                    item.current ? 'bg-gray-900 text-white' : 'text-gray-900 dark:text-gray-400 hover:bg-blue-700 hover:text-white',
                     'block rounded-md px-3 py-2 text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}

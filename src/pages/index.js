@@ -1,13 +1,13 @@
 import React from 'react'
 import Hero from "../components/Hero"
-import Image from "next/image"
+import Jumbotron from '../components/Jumbotron'
 import dynamic from "next/dynamic"
-import avatar from "../../public/picFive.png"
 
 const index = () => {
   return (
-    <div className="export default bg-black">
+    <div className="bg-black">
         <Hero/>
+        <Jumbotron/>
     </div>
   )
 }
