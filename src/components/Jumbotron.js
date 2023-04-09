@@ -41,7 +41,7 @@ function onSubmit(e) {
             <section class="bg-white dark:bg-black bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
                 <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative">
                     <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Invest in your appearance</h1>
-                    <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-200">From classic cuts to modern fades - a blend of creativity and technique to create a personalized look that perfectly matches your personality and preferences. So why settle for an average cut when you can experience a precision cut from Mike Drop Fades?</p>
+                    <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-200">From classic cuts to modern fades - a blend of creativity and technique to create a personalized look that perfectly matches your personality and preferences. So why settle for an average cut when you can experience a precision cut by Mike Drop Fades?</p>
                     <form class="w-full max-w-md mx-auto" onSubmit={onSubmit}>
                         <label for="default-email" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Email sign-up</label>
                         <div class="relative">
