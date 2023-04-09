@@ -37,7 +37,7 @@ const MyModal = ({ isVisible, onClose, message, isSuccess }) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className={`w-full max-w-md transform overflow-hidden rounded-2xl p-6 text-left align-middle shadow-xl transition-all ${isSuccess? "bg-blue-700": "bg-red-600"}`}>
+                <Dialog.Panel className={`w-full max-w-md transform overflow-hidden rounded-2xl p-6 text-left align-middle shadow-xl transition-all ${isSuccess? "bg-blue-700": "bg-black"}`}>
                   <Dialog.Title
                     as="h3"
                     className="text-lg text-white font-bold leading-6"
