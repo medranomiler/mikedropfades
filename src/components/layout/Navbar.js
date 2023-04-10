@@ -21,7 +21,7 @@ export default function Navbar() {
 
 
   return (
-    <Disclosure as="nav" className="dark:bg-black bg:white border-b  border-gray-200 dark:border-gray-700">
+    <Disclosure as="nav" className="bg-black">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -51,7 +51,7 @@ export default function Navbar() {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current ? 'bg-blue-700 text-white' : 'dark:text-slate-50 hover:bg-blue-700 dark:hover:bg-blue-700 dark:hover:text-white',
+                          item.current ? 'bg-blue-700 text-white' : 'text-slate-50 hover:bg-blue-700 hover:text-white',
                           'rounded-md px-3 py-2 text-sm font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
@@ -76,7 +76,7 @@ export default function Navbar() {
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-900 dark:text-gray-400 hover:bg-blue-700 hover:text-white',
+                    item.current ? 'bg-gray-900 text-white' : 'text-gray-400 hover:bg-blue-700 hover:text-white',
                     'block rounded-md px-3 py-2 text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}
