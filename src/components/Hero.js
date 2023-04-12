@@ -3,6 +3,8 @@ import heroPhoto2 from '../../public/mdfLarge.jpeg'
 import mdfLogoLarge from "../../public/mdfLogoLarge.png"
 import Image from 'next/image'
 import Link from 'next/link'
+import Asset3 from "../../public/Asset 3.svg"
+
 
 
 function Hero() {
@@ -22,7 +24,7 @@ function Hero() {
         left: "50%",
         transform: "translate(-50%, -50%)"
       }}>
-        <Image src={mdfLogoLarge} />
+        <Image src={Asset3} width={200} />
 
         <Link href="/book"><button type="button" class="mt-5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
           Book Appointment
