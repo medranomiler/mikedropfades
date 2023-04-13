@@ -3,7 +3,7 @@ import Calendly from '../components/Calendly'
 
 const book = () => {
   return (
-    <div>
+    <div className="invert">
 <Calendly />
     </div>
   )
