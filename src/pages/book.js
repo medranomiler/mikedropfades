@@ -9,4 +9,4 @@ const book = () => {
   )
 }
 
-export default book
+export default book;
