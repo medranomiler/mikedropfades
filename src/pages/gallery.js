@@ -10,10 +10,10 @@ const Gallery = ({feed}) => {
   // }
 
   return (
-        <main className="flex flex-wrap justify-center sm:p-4">
+        <main className="flex flex-wrap justify-center sm:p-4 snap-y">
       {images && 
         images.map(image => (
-          <div key={image.id} className="sm:p-6 flex flex-col items-center w-[600px]">
+          <div key={image.id} className="sm:p-6 sm:w-[400px] flex flex-col items-center w-full my-4 snap-start">
             
               {image.media_type === "VIDEO" ? (
                 <video src={image.media_url} alt={image.caption} poster={image.thumbnail_url} controls className="sm:rounded-xl" />
