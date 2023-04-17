@@ -16,7 +16,7 @@ const Gallery = ({feed}) => {
           <div key={image.id} className="sm:p-6 flex flex-col items-center w-[600px]">
             
               {image.media_type === "VIDEO" ? (
-                <video src={image.media_url} alt={image.caption} controls className="sm:rounded-xl" />
+                <video src={image.media_url} alt={image.caption} poster={image.thumbnail_url} controls className="sm:rounded-xl" />
               ) : (
                 <img src={image.media_url} alt={image.caption} className="sm:rounded-lg" />
               )}
@@ -33,7 +33,7 @@ const Gallery = ({feed}) => {
 export default Gallery
 
 export const getStaticProps = async () =>{
-  const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=${process.env.INSTAGRAM_KEY}`
+  const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink,thumbnail_url&access_token=${process.env.INSTAGRAM_KEY}`
   const data = await fetch(url)
   const feed = await data.json()
 
