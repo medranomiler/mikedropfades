@@ -55,6 +55,15 @@ const Gallery = ({feed}) => {
                 ref={videoRef}
                 poster={image.thumbnail_url}
                 onEnded={handleVideoEnded}
+                onClick={() => {
+                  if (!document.fullscreenElement) {
+                    videoRef.current.requestFullscreen();
+                  } else {
+                    if (document.exitFullscreen) {
+                      document.exitFullscreen();
+                    }
+                  }
+                }}
               />
             ) : (
               <img src={image.media_url} alt={image.caption} className="sm:rounded-lg" />
