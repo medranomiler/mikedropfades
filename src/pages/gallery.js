@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useRef } from 'react';
 
 const Gallery = ({feed}) => {
-  const images = feed.data
+  const images = feed.data;
+  const videoRef = useRef(null);
 
   // function formattedDate(timestamp) {
   //   const date = new Date(timestamp);
@@ -9,33 +10,45 @@ const Gallery = ({feed}) => {
   //   return date.toLocaleDateString('en-US', options);
   // }
 
+  function handleVideoEnded() {
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+    }
+  }
+
   return (
-        <main className="flex flex-wrap justify-center sm:p-4 snap-y">
+    <main className="flex flex-wrap justify-center sm:p-4">
       {images && 
         images.map(image => (
-          <div key={image.id} className="sm:p-6 sm:w-[400px] flex flex-col items-center w-full my-4 snap-start">
-            
-              {image.media_type === "VIDEO" ? (
-                <video src={image.media_url} alt={image.caption} poster={image.thumbnail_url} controls className="sm:rounded-xl" />
-              ) : (
-                <img src={image.media_url} alt={image.caption} className="sm:rounded-lg" />
-              )}
-              <div className="p-2 flex flex-col items-center">
+          <div key={image.id} className="sm:p-6 flex flex-col items-center w-[600px]">
+            {image.media_type === "VIDEO" ? (
+              <video
+                src={image.media_url}
+                alt={image.caption}
+                controls
+                className="sm:rounded-xl"
+                ref={videoRef}
+                onEnded={handleVideoEnded}
+              />
+            ) : (
+              <img src={image.media_url} alt={image.caption} className="sm:rounded-lg" />
+            )}
+            <div className="p-2 flex flex-col items-center">
               <h2 className="text-white mt-1 text-sm font-bold">{image.caption}</h2>
               {/* <p className="text-white mt-1 text-sm font-bold">{formattedDate(image.timestamp)}</p> */}
-              </div>
+            </div>
           </div>
         ))}
-        </main>
+    </main>
   )
 }
 
-export default Gallery
+export default Gallery;
 
-export const getStaticProps = async () =>{
-  const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink,thumbnail_url&access_token=${process.env.INSTAGRAM_KEY}`
-  const data = await fetch(url)
-  const feed = await data.json()
+export const getStaticProps = async () => {
+  const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=${process.env.INSTAGRAM_KEY}`;
+  const data = await fetch(url);
+  const feed = await data.json();
 
   return {
     props: {
