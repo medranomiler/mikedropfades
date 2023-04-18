@@ -1,45 +1,15 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 
 const Gallery = ({feed}) => {
   const images = feed.data;
   const videoRef = useRef(null);
 
-  // function formattedDate(timestamp) {
-  //   const date = new Date(timestamp);
-  //   const options = { month: '2-digit', day: '2-digit', year: 'numeric' };
-  //   return date.toLocaleDateString('en-US', options);
-  // }
 
   function handleVideoEnded() {
-    if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
+    if (document.fullscreenElement) {
       document.exitFullscreen();
-      document.webkitExitFullscreen();
-      document.mozCancelFullScreen?.();
-      document.msExitFullscreen?.();
     }
   }
-
-  useEffect(() => {
-    function handleFullscreenChange() {
-      if (document.fullscreenElement === null && document.webkitFullscreenElement === null && document.mozFullScreenElement === null && document.msFullscreenElement === null) {
-        if (!videoRef.current.paused && videoRef.current.currentTime >= videoRef.current.duration) {
-          handleVideoEnded();
-        }
-      }
-    }
-
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
-    document.addEventListener('mozfullscreenchange', handleFullscreenChange);
-    document.addEventListener('MSFullscreenChange', handleFullscreenChange);
-
-    return () => {
-      document.removeEventListener('fullscreenchange', handleFullscreenChange);
-      document.removeEventListener('webkitfullscreenchange', handleFullscreenChange);
-      document.removeEventListener('mozfullscreenchange', handleFullscreenChange);
-      document.removeEventListener('MSFullscreenChange', handleFullscreenChange);
-    };
-  }, []);
 
   return (
     <main className="flex flex-wrap justify-center sm:p-4">
@@ -55,15 +25,6 @@ const Gallery = ({feed}) => {
                 ref={videoRef}
                 poster={image.thumbnail_url}
                 onEnded={handleVideoEnded}
-                onClick={() => {
-                  if (!document.fullscreenElement) {
-                    videoRef.current.requestFullscreen();
-                  } else {
-                    if (document.exitFullscreen) {
-                      document.exitFullscreen();
-                    }
-                  }
-                }}
               />
             ) : (
               <img src={image.media_url} alt={image.caption} className="sm:rounded-lg" />
