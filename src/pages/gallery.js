@@ -28,6 +28,7 @@ const Gallery = ({feed}) => {
                 controls
                 className="sm:rounded-xl"
                 ref={videoRef}
+                poster={image.thumbnail_url}
                 onEnded={handleVideoEnded}
               />
             ) : (
@@ -46,7 +47,7 @@ const Gallery = ({feed}) => {
 export default Gallery;
 
 export const getStaticProps = async () => {
-  const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=${process.env.INSTAGRAM_KEY}`;
+  const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,thumbnail_url,permalink&access_token=${process.env.INSTAGRAM_KEY}`;
   const data = await fetch(url);
   const feed = await data.json();
 
