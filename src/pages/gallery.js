@@ -5,12 +5,6 @@ const Gallery = ({feed}) => {
   const videoRef = useRef(null);
 
 
-  function handleVideoEnded() {
-    if (document.fullscreenElement) {
-      document.exitFullscreen();
-    }
-  }
-
   return (
     <main className="flex flex-wrap justify-center sm:p-4">
       {images && 
@@ -24,7 +18,6 @@ const Gallery = ({feed}) => {
                 className="sm:rounded-xl"
                 ref={videoRef}
                 poster={image.thumbnail_url}
-                onEnded={handleVideoEnded}
               />
             ) : (
               <img src={image.media_url} alt={image.caption} className="sm:rounded-lg" />
