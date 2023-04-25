@@ -6,7 +6,7 @@ import Link from "next/link"
 const Tips = () => {
 
     return (
-        <div className="p-4 bg-black bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')] h-screen">
+        <div className="p-4 bg-black bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')] h-full">
                 <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative">
                     <h1 className="mb-4 text-5xl font-extrabold tracking-tight leading-none md:text-5xl lg:text-6xl text-white">
                         Your business is greatly appreciated
