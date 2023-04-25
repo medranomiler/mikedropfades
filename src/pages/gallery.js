@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 
 const Gallery = ({feed}) => {
   const images = feed.data;
-  const videoRef = useRef(null);
+
 
 
   return (
@@ -16,7 +16,6 @@ const Gallery = ({feed}) => {
                 alt={image.caption}
                 controls
                 className="sm:rounded-xl"
-                ref={videoRef}
                 poster={image.thumbnail_url}
               />
             ) : (
