@@ -23,7 +23,6 @@ const Gallery = ({feed}) => {
             )}
             <div className="p-2 flex flex-col items-center">
               <h2 className="text-white mt-1 text-sm font-bold">{image.caption}</h2>
-              {/* <p className="text-white mt-1 text-sm font-bold">{formattedDate(image.timestamp)}</p> */}
             </div>
           </div>
         ))}
