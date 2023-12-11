@@ -16,6 +16,7 @@ const Gallery = ({feed}) => {
                 alt={image.caption}
                 controls
                 className="sm:rounded-xl"
+                
                 poster={image.thumbnail_url}
               />
             ) : (
